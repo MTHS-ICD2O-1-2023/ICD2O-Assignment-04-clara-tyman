@@ -1,9 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Title</title>
-  </head>
-  <body>
-    <p>Paragraph</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Burger order" />
+  <meta name="keywords" content="mths, icd2o" />
+  <meta name="author" content="Clara Tyman" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-indigo.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <title>Burger order</title>
+</head>
+<body>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="./js/script.js"></script>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Burger order</span>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content">Buns and pattys cost $0.50 each. Other toppings cost $0.25 each. The
+        base cost of a burger is $5.00</div>
+      <!-- Simple Textfield for integers-->
+      <form action="#">
+        <h5>Choose a bun</h5>
+        <div>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="normal-bun">
+            <input type="radio" id="normal-bun" class="mdl-radio__button" name="bun" value="1" checked>
+            <span class="mdl-radio__label">Normal Bun</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="seeded-bun">
+            <input type="radio" id="seeded-bun" class="mdl-radio__button" name="bun" value="2">
+            <span class="mdl-radio__label">Seeded Bun</span>
+          </label>
+        </div>
+        <br />
+        <h5>Choose a patty</h5>
+        <div>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="one-patty">
+            <input type="radio" id="one-patty" class="mdl-radio__button" name="patty" value="1" checked>
+            <span class="mdl-radio__label">One Patty</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="two-pattys">
+            <input type="radio" id="two-pattys" class="mdl-radio__button" name="patty" value="2">
+            <span class="mdl-radio__label">Two Pattys</span>
+          </label>
+        </div>
+        <br />
+        <h5>Add tomato</h5>
+        <div>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no-tomato">
+            <input type="radio" id="no-tomato" class="mdl-radio__button" name="tomato" value="1" checked>
+            <span class="mdl-radio__label">No Tomato</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tomato">
+            <input type="radio" id="tomato" class="mdl-radio__button" name="tomato" value="2">
+            <span class="mdl-radio__label">Tomato</span>
+          </label>
+        </div>
+        <br />
+        <h5>Add lettuce</h5>
+        <div>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no-lettuce">
+            <input type="radio" id="no-lettuce" class="mdl-radio__button" name="lettuce" value="1" checked>
+            <span class="mdl-radio__label">No Lettuce</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lettuce">
+            <input type="radio" id="lettuce" class="mdl-radio__button" name="lettuce" value="2">
+            <span class="mdl-radio__label">Lettuce</span>
+          </label>
+        </div>
+        <br />
+        <h5>Add bacon</h5>
+        <div>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no-bacon">
+            <input type="radio" id="no-bacon" class="mdl-radio__button" name="bacon" value="1" checked>
+            <span class="mdl-radio__label">No Bacon</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bacon">
+            <input type="radio" id="bacon" class="mdl-radio__button" name="bacon" value="2">
+            <span class="mdl-radio__label">Bacon</span>
+          </label>
+        </div>
+        <br />
+        <h5>Add ketchup</h5>
+        <div>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no-ketchup">
+            <input type="radio" id="no-ketchup" class="mdl-radio__button" name="ketchup" value="1" checked>
+            <span class="mdl-radio__label">No Ketchup</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ketchup">
+            <input type="radio" id="ketchup" class="mdl-radio__button" name="ketchup" value="2">
+            <span class="mdl-radio__label">Ketchup</span>
+          </label>
+        </div>
+        <br />
+        <!-- Accent-colored raised button with ripple -->
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          type="button" onclick="myButtonClicked()">
+          Calculate price
+        </button>
+        <br />
+        <br />
+        <div id="page-content-answer"></div>
+        <div id="answer"></div>
+        <br />
+        <br />
+        <br />
+      </form>
+              <br />
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
 </html>
